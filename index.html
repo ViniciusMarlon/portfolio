@@ -7,38 +7,22 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Ícones Devicon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <style>
-        /* Ajuste do Carrossel */
-        .carousel-item {
-            height: 95vh;
-        }
-        .carousel-item img {
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-        
-        /* Ajuste para a foto de perfil não ficar gigante */
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        /* Ajuste para as imagens dos projetos ficarem padronizadas */
-        .project-img {
-            height: 200px;
-            object-fit: cover;
-        }
+        .carousel-item { height: 95vh; }
+        .carousel-item img { height: 100%; object-fit: cover; object-position: center; }
+        .profile-img { width: 250px; height: 250px; object-fit: cover; }
+        .project-img { height: 200px; object-fit: cover; }
     </style>
 </head>
 
 <body class="bg-light">
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- NAVBAR (Com Tooltips nos links) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">Vinicius Marlon.dev</a>
@@ -47,15 +31,22 @@
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#perfil">Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <!-- Adicionado data-bs-toggle e title para o Tooltip -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#perfil" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ir para a seção de Perfil">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projetos" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver meus projetos">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fale comigo">Contato</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ================= CARROSSEL ================= -->
+    <!-- CARROSSEL -->
     <div id="carouselPortfolio" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselPortfolio" data-bs-slide-to="0" class="active"></button>
@@ -78,30 +69,24 @@
         </button>
     </div>
 
-    <!-- ================= SEÇÃO PERFIL ================= -->
+    <!-- SEÇÃO PERFIL -->
     <section id="perfil" class="bg-white py-5">
         <div class="container py-4">
             <div class="row align-items-center g-5">
-                
-                <!-- Coluna da Foto -->
                 <div class="col-lg-4 text-center">
                     <img src="imagens/eu.jpg" alt="Foto de perfil" class="profile-img rounded-circle border border-4 border-white shadow img-fluid mb-3">
                     <h4 class="fw-bold mt-3 mb-1">Vinicius Marlon</h4>
                     <p class="text-muted mb-2">Desenvolvimento de Sistemas</p>
                     <span class="badge bg-primary px-3 py-2">Portfólio acadêmico</span>
                 </div>
-
-                <!-- Coluna de Texto -->
                 <div class="col-lg-8">
                     <p class="text-uppercase text-muted fw-semibold mb-2">Desenvolvimento de Sistemas</p>
                     <h2 class="text-primary fw-bold mb-3">Perfil Profissional</h2>
                     <p class="fs-5 text-secondary">
                         Sou estudante da área de tecnologia com foco em desenvolvimento web, interfaces responsivas
-                        e construção de soluções digitais. Tenho interesse em projetos front-end, organização visual
-                        e uso de boas práticas no desenvolvimento.
+                        e construção de soluções digitais.
                     </p>
                     
-                    <!-- Grid de Informações -->
                     <div class="row mt-4 g-3">
                         <div class="col-md-6">
                             <div class="card border-0 shadow-sm h-100">
@@ -119,151 +104,99 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card border-0 shadow-sm h-100">
-                                <div class="card-body">
-                                    <h6 class="fw-bold mb-2">Formação</h6>
-                                    <p class="text-muted mb-0">Desenvolvimento de Sistemas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TECNOLOGIAS (Com Tooltips) -->
+            <div class="mt-5">
+                <h5 class="fw-semibold mb-3">Tecnologias e ferramentas</h5>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center gap-3 mb-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Linguagem de marcação para estruturar páginas web.">
+                                    <i class="devicon-html5-plain colored fs-2"></i>
+                                    <div><div class="fw-semibold">HTML5</div><small class="text-muted">Estrutura</small></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 mb-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Linguagem de estilização para design e layout.">
+                                    <i class="devicon-css3-plain colored fs-2"></i>
+                                    <div><div class="fw-semibold">CSS3</div><small class="text-muted">Estilo</small></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Framework CSS para layouts responsivos e rápidos.">
+                                    <i class="devicon-bootstrap-plain colored fs-2"></i>
+                                    <div><div class="fw-semibold">Bootstrap</div><small class="text-muted">Layout</small></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card border-0 shadow-sm h-100">
-                                <div class="card-body">
-                                    <h6 class="fw-bold mb-2">Objetivo</h6>
-                                    <p class="text-muted mb-0">Criar interfaces modernas e projetos digitais</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center gap-3 mb-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Linguagem de programação versátil para lógica e back-end.">
+                                    <i class="devicon-python-plain colored fs-2"></i>
+                                    <div><div class="fw-semibold">Python</div><small class="text-muted">Algoritmos</small></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 mb-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Plataforma de versionamento de código e portfólio.">
+                                    <i class="devicon-github-original fs-2"></i>
+                                    <div><div class="fw-semibold">GitHub</div><small class="text-muted">Repositórios</small></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Editor de código leve e poderoso da Microsoft.">
+                                    <i class="devicon-vscode-plain colored fs-2"></i>
+                                    <div><div class="fw-semibold">VS Code</div><small class="text-muted">Ambiente de desenvolvimento</small></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> <!-- Fim da Row Principal -->
-
-            <!-- ================= SEÇÃO TECNOLOGIAS ================= -->
-            <div class="mt-5">
-                <h5 class="fw-semibold mb-3">Tecnologias e ferramentas</h5>
-                
-                <div class="row g-4">
-                    <!-- Card 1: Front-end -->
-                    <div class="col-md-6">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <i class="devicon-html5-plain colored fs-2"></i>
-                                    <div>
-                                        <div class="fw-semibold">HTML5</div>
-                                        <small class="text-muted">Estrutura</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <i class="devicon-css3-plain colored fs-2"></i>
-                                    <div>
-                                        <div class="fw-semibold">CSS3</div>
-                                        <small class="text-muted">Estilo</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center gap-3">
-                                    <i class="devicon-bootstrap-plain colored fs-2"></i>
-                                    <div>
-                                        <div class="fw-semibold">Bootstrap</div>
-                                        <small class="text-muted">Layout</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Back-end e Ferramentas -->
-                    <div class="col-md-6">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <i class="devicon-python-plain colored fs-2"></i>
-                                    <div>
-                                        <div class="fw-semibold">Python</div>
-                                        <small class="text-muted">Algoritmos</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <i class="devicon-github-original fs-2"></i>
-                                    <div>
-                                        <div class="fw-semibold">GitHub</div>
-                                        <small class="text-muted">Repositórios</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center gap-3">
-                                    <i class="devicon-vscode-plain colored fs-2"></i>
-                                    <div>
-                                        <div class="fw-semibold">VS Code</div>
-                                        <small class="text-muted">Ambiente de desenvolvimento</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- Fim da Row de Tecnologias -->
-            </div> <!-- Fim do Container de Tecnologias -->
-
-        </div> <!-- Fim do Container Principal -->
+            </div>
+        </div>
     </section>
 
-    <!-- ================= SEÇÃO PROJETOS ================= -->
+    <!-- SEÇÃO PROJETOS -->
     <section id="projetos" class="py-5">
         <div class="container py-4">
             <div class="text-center mb-5">
                 <h2 class="text-primary fw-bold">Projetos</h2>
-                <p class="text-muted mb-0">
-                    Alguns projetos e atividades que representam minha evolução na área de desenvolvimento.
-                </p>
+                <p class="text-muted mb-0">Alguns projetos e atividades que representam minha evolução.</p>
             </div>
 
             <div class="row g-4">
-                <!-- Projeto 1 -->
                 <div class="col-md-6 col-xl-4">
                     <div class="card h-100 shadow-sm border-0 rounded-4">
                         <img src="imagens/Captura de tela 2026-11-11 111357.png" class="card-img-top project-img" alt="Portfólio Pessoal">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Portfólio Pessoal</h5>
-                            <p class="card-text text-muted flex-grow-1">
-                                Site desenvolvido para apresentar perfil profissional, tecnologias estudadas e projetos realizados.
-                            </p>
+                            <p class="card-text text-muted flex-grow-1">Site desenvolvido para apresentar perfil profissional, tecnologias estudadas e projetos realizados.</p>
                             <a href="#" class="btn btn-outline-primary mt-auto">Ver projeto</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Projeto 2 -->
                 <div class="col-md-6 col-xl-4">
                     <div class="card h-100 shadow-sm border-0 rounded-4">
                         <img src="imagens/Captura de tela 2026-11-11 111802.png" class="card-img-top project-img" alt="Sistema em Python">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Sistema em Python</h5>
-                            <p class="card-text text-muted flex-grow-1">
-                                Aplicação desenvolvida em Python com foco em lógica de programação, entrada de dados e processamento de informações.
-                            </p>
+                            <p class="card-text text-muted flex-grow-1">Aplicação desenvolvida em Python com foco em lógica de programação, entrada de dados e processamento.</p>
                             <a href="#" class="btn btn-outline-primary mt-auto">Ver projeto</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Projeto 3 -->
                 <div class="col-md-6 col-xl-4">
                     <div class="card h-100 shadow-sm border-0 rounded-4">
                         <img src="imagens/Captura de tela 2026-11-11 112105.png" class="card-img-top project-img" alt="Landing Page Responsiva">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Landing Page Responsiva</h5>
-                            <p class="card-text text-muted flex-grow-1">
-                                Página criada com HTML, CSS e Bootstrap, priorizando organização visual, responsividade e experiência do usuário.
-                            </p>
+                            <p class="card-text text-muted flex-grow-1">Página criada com HTML, CSS e Bootstrap, priorizando organização visual e responsividade.</p>
                             <a href="#" class="btn btn-outline-primary mt-auto">Ver projeto</a>
                         </div>
                     </div>
                 </div>
-            </div> <!-- Fim da Row de Projetos -->
-        </div> <!-- Fim do Container de Projetos -->
+            </div>
+        </div>
     </section>
 
-    <!-- ================= SEÇÃO CONTATO (CORRIGIDA) ================= -->
+    <!-- SEÇÃO CONTATO (Com Bootstrap Icons) -->
     <section id="contato" class="min-vh-100 d-flex align-items-center py-5 bg-white">
         <div class="container py-4">
             <div class="text-center mb-5">
@@ -274,28 +207,28 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="card shadow-sm border-0 rounded-4 p-4 text-center">
-                        <!-- O conteúdo do card estava fora dele, agora está dentro -->
                         <h4 class="fw-bold mb-3">Fale comigo</h4>
-                        <p class="text-muted mb-4">
-                            Estou em constante aprendizado e disponível para trocar ideias, compartilhar projetos
-                            e construir novas conexões profissionais.
-                        </p>
+                        <p class="text-muted mb-4">Estou em constante aprendizado e disponível para trocar ideias e construir novas conexões.</p>
                         <div class="d-grid gap-3">
-                            <a href="mailto:viniciusmarlonnogueira@ehotmail.com" class="btn btn-outline-primary btn-lg">Enviar e-mail</a>
-                            <a href="https://github.com/ViniciusMarlon" target="_blank" class="btn btn-dark btn-lg">GitHub</a>
-                            <a href="https://www.linkedin.com/in/vinicius-nogueira-272230354/" target="_blank" class="btn btn-primary btn-lg">LinkedIn</a>
+                            <a href="mailto:viniciusmarlonnogueira@ehotmail.com" class="btn btn-outline-primary btn-lg">
+                                <i class="bi bi-envelope-fill me-2"></i> Enviar e-mail
+                            </a>
+                            <a href="https://github.com/ViniciusMarlon" target="_blank" class="btn btn-dark btn-lg">
+                                <i class="bi bi-github me-2"></i> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/vinicius-nogueira-272230354/" target="_blank" class="btn btn-primary btn-lg">
+                                <i class="bi bi-linkedin me-2"></i> LinkedIn
+                            </a>
                         </div>
                         <hr class="my-4">
-                        <p class="text-muted mb-0">
-                            <span class="fw-semibold">Localização:</span> Sorocaba/SP
-                        </p>
+                        <p class="text-muted mb-0"><span class="fw-semibold">Localização:</span> Sorocaba/SP</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= RODAPÉ (CORRIGIDO) ================= -->
+    <!-- RODAPÉ -->
     <footer class="bg-dark text-light py-4">
         <div class="container text-center">
             <p class="mb-1">© 2026 - Portfólio Profissional</p>
@@ -305,5 +238,12 @@
 
     <!-- Scripts Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- ================= SCRIPT PARA ATIVAR OS TOOLTIPS ================= -->
+    <script>
+        // Inicializa todos os tooltips da página (menu, tecnologias, etc.)
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
 </body>
 </html>
